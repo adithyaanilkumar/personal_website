@@ -4,23 +4,19 @@ module.exports = {
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/bchiang7',
+      url: 'https://github.com/adithyaanilkumar',
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7',
+      url: 'https://www.instagram.com/adixthya',
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
+      url: 'https://twitter.com/adixthya',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7',
-    },
-    {
-      name: 'Codepen',
-      url: 'https://codepen.io/bchiang7',
+      url: 'https://www.linkedin.com/in/adithyaanilkumar',
     },
   ],
 
@@ -44,7 +40,7 @@ module.exports = {
   ],
 
   colors: {
-    green: '#64ffda',
+    green: '#E00019', // was 64ffda - green
     navy: '#0a192f',
     darkNavy: '#020c1b',
   },
