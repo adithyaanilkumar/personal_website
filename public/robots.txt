@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://adithyaanilkumar.com/sitemap.xml
+Host: https://adithyaanilkumar.com

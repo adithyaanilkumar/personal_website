@@ -73,7 +73,7 @@ module.exports = {
             // https://www.gatsbyjs.org/packages/gatsby-remark-external-links
             resolve: 'gatsby-remark-external-links',
             options: {
-              target: '_blank',
+              target: 'serverless',
               rel: 'nofollow noopener noreferrer',
             },
           },

@@ -1,0 +1,622 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.fccf99036d48930c9350.css" id="gatsby-global-css">@import url(https://fonts.googleapis.com/css2?family=Sacramento&display=swap);#center{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%}#name{font-family:Sacramento,cursive;color:red;font-size:40px;margin-top:20px}</style><meta name="generator" content="Gatsby 3.4.1"/><title data-react-helmet="true">Arch Linux Nightmare | Adithya Anilkumar</title><meta data-react-helmet="true" name="description" content="Hobbyist Developer and Passionate Maker building next gen EV&#x27;s @AtherEnergy"/><meta data-react-helmet="true" name="image" content="https://adithyaanilkumar.com/og.png"/><meta data-react-helmet="true" property="og:title" content="Adithya Anilkumar"/><meta data-react-helmet="true" property="og:description" content="Hobbyist Developer and Passionate Maker building next gen EV&#x27;s @AtherEnergy"/><meta data-react-helmet="true" property="og:image" content="https://adithyaanilkumar.com/og.png"/><meta data-react-helmet="true" property="og:url" content="https://adithyaanilkumar.com/blog/arch"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:creator" content="@adixthya"/><meta data-react-helmet="true" name="twitter:title" content="Adithya Anilkumar"/><meta data-react-helmet="true" name="twitter:description" content="Hobbyist Developer and Passionate Maker building next gen EV&#x27;s @AtherEnergy"/><meta data-react-helmet="true" name="twitter:image" content="https://adithyaanilkumar.com/og.png"/><meta data-react-helmet="true" name="google-site-verification" content="DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk"/><style data-styled="" data-styled-version="5.3.0">@font-face{font-family:'Calibre';src:url(/static/Calibre-Regular-b0d4cbb1201155ddccc21d1b8059a670.woff2) format('woff2'), url(/static/Calibre-Regular-98526589fa32315c552129869e08427e.woff) format('woff');font-weight:400;font-style:normal;font-display:auto;}/*!sc*/
+@font-face{font-family:'Calibre';src:url(/static/Calibre-Medium-568dce56f869a519a015d3b69443b067.woff2) format('woff2'), url(/static/Calibre-Medium-46693d9b57a6b8a657b5393258f6e899.woff) format('woff');font-weight:500;font-style:normal;font-display:auto;}/*!sc*/
+@font-face{font-family:'Calibre';src:url(/static/Calibre-Semibold-94fc73852539d6733dc0d80252c5e3fb.woff2) format('woff2'), url(/static/Calibre-Semibold-6972688a249bd53a6c7e69a89e50cdd6.woff) format('woff');font-weight:600;font-style:normal;font-display:auto;}/*!sc*/
+@font-face{font-family:'Calibre';src:url(/static/Calibre-RegularItalic-5f875bd7b669f1e11b622d4d6d71b5b0.woff2) format('woff2'), url(/static/Calibre-RegularItalic-57371b9e514dbbe9da31dad1a298de2d.woff) format('woff');font-weight:400;font-style:italic;font-display:auto;}/*!sc*/
+@font-face{font-family:'Calibre';src:url(/static/Calibre-MediumItalic-7aa140573fd9ed30ae01e117c418b12b.woff2) format('woff2'), url(/static/Calibre-MediumItalic-aa285f95879aa2c2d26b228d5e422da6.woff) format('woff');font-weight:500;font-style:italic;font-display:auto;}/*!sc*/
+@font-face{font-family:'Calibre';src:url(/static/Calibre-SemiboldItalic-5f04bffe7ce988169806d66e417a966a.woff2) format('woff2'), url(/static/Calibre-SemiboldItalic-ad4bd95abee7bca1bdd6a93398f84a04.woff) format('woff');font-weight:600;font-style:italic;font-display:auto;}/*!sc*/
+@font-face{font-family:'SF Mono';src:url(/static/SFMono-Regular-8799e6387338d58f2f137df821c86eb4.woff2) format('woff2'), url(/static/SFMono-Regular-e36fa5257c93fc7711eae342068f9eda.woff) format('woff');font-weight:400;font-style:normal;font-display:auto;}/*!sc*/
+@font-face{font-family:'SF Mono';src:url(/static/SFMono-Semibold-6e6f6c93f4bdf9cbd090c60e97a017e2.woff2) format('woff2'), url(/static/SFMono-Semibold-ee054046915420413d0068fb1e7105c3.woff) format('woff');font-weight:600;font-style:normal;font-display:auto;}/*!sc*/
+@font-face{font-family:'SF Mono';src:url(/static/SFMono-RegularItalic-a596917f86217b40000ff1b894cd0e52.woff2) format('woff2'), url(/static/SFMono-RegularItalic-3a20a00dfdeb4ba538473fa7bf625cbd.woff) format('woff');font-weight:400;font-style:italic;font-display:auto;}/*!sc*/
+@font-face{font-family:'SF Mono';src:url(/static/SFMono-SemiboldItalic-9a0ae6382e12c5e28a7342ffb41cf4da.woff2) format('woff2'), url(/static/SFMono-SemiboldItalic-10eb596e904940cd1aebb2cc6286015c.woff) format('woff');font-weight:600;font-style:italic;font-display:auto;}/*!sc*/
+:root{--dark-navy:#020c1b;--navy:#0a192f;--light-navy:#112240;--lightest-navy:#233554;--navy-shadow:rgba(2,12,27,0.7);--dark-slate:#495670;--slate:#8892b0;--light-slate:#a8b2d1;--lightest-slate:#ccd6f6;--white:#e6f1ff;--green:#e00019;--green-tint:rgba(100,255,218,0.1);--pink:#f57dff;--blue:#57cbff;--font-sans:'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif;--font-mono:'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;--fz-xxs:12px;--fz-xs:13px;--fz-sm:14px;--fz-md:16px;--fz-lg:18px;--fz-xl:20px;--fz-xxl:22px;--fz-heading:32px;--border-radius:4px;--nav-height:100px;--nav-scroll-height:70px;--tab-height:42px;--tab-width:120px;--easing:cubic-bezier(0.645,0.045,0.355,1);--transition:all 0.25s cubic-bezier(0.645,0.045,0.355,1);--hamburger-width:30px;--ham-before:top 0.1s ease-in 0.25s,opacity 0.1s ease-in;--ham-before-active:top 0.1s ease-out,opacity 0.1s ease-out 0.12s;--ham-after:bottom 0.1s ease-in 0.25s,transform 0.22s cubic-bezier(0.55,0.055,0.675,0.19);--ham-after-active:bottom 0.1s ease-out,transform 0.22s cubic-bezier(0.215,0.61,0.355,1) 0.12s;}/*!sc*/
+html{box-sizing:border-box;width:100%;-webkit-scroll-behavior:smooth;-moz-scroll-behavior:smooth;-ms-scroll-behavior:smooth;scroll-behavior:smooth;}/*!sc*/
+*,*:before,*:after{box-sizing:inherit;}/*!sc*/
+::selection{background-color:var(--lightest-navy);color:var(--lightest-slate);}/*!sc*/
+:focus{outline:2px dashed var(--green);outline-offset:3px;}/*!sc*/
+:focus:not(:focus-visible){outline:none;outline-offset:0px;}/*!sc*/
+:focus-visible{outline:2px dashed var(--green);outline-offset:3px;}/*!sc*/
+html{-webkit-scrollbar-width:thin;-moz-scrollbar-width:thin;-ms-scrollbar-width:thin;scrollbar-width:thin;-webkit-scrollbar-color:var(--dark-slate) var(--navy);-moz-scrollbar-color:var(--dark-slate) var(--navy);-ms-scrollbar-color:var(--dark-slate) var(--navy);scrollbar-color:var(--dark-slate) var(--navy);}/*!sc*/
+::-webkit-scrollbar{width:12px;}/*!sc*/
+::-webkit-scrollbar-track{background:var(--navy);}/*!sc*/
+::-webkit-scrollbar-thumb{background-color:var(--dark-slate);border:3px solid var(--navy);border-radius:10px;}/*!sc*/
+body{margin:0;width:100%;min-height:100%;overflow-x:hidden;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;background-color:var(--navy);color:var(--slate);font-family:var(--font-sans);font-size:var(--fz-xl);line-height:1.3;}/*!sc*/
+@media (max-width:480px){body{font-size:var(--fz-lg);}}/*!sc*/
+body.hidden{overflow:hidden;}/*!sc*/
+body.blur{overflow:hidden;}/*!sc*/
+body.blur header{background-color:transparent;}/*!sc*/
+body.blur #content > *{-webkit-transition:var(--transition);transition:var(--transition);pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}/*!sc*/
+#root{min-height:100vh;display:grid;grid-template-rows:1fr auto;grid-template-columns:100%;}/*!sc*/
+main{margin:0 auto;width:100%;max-width:1600px;min-height:100vh;padding:200px 150px;}/*!sc*/
+@media (max-width:1080px){main{padding:200px 100px;}}/*!sc*/
+@media (max-width:768px){main{padding:150px 50px;}}/*!sc*/
+@media (max-width:480px){main{padding:125px 25px;}}/*!sc*/
+main.fillHeight{padding:0 150px;}/*!sc*/
+@media (max-width:1080px){main.fillHeight{padding:0 100px;}}/*!sc*/
+@media (max-width:768px){main.fillHeight{padding:0 50px;}}/*!sc*/
+@media (max-width:480px){main.fillHeight{padding:0 25px;}}/*!sc*/
+section{margin:0 auto;padding:100px 0;max-width:1000px;}/*!sc*/
+@media (max-width:768px){section{padding:80px 0;}}/*!sc*/
+@media (max-width:480px){section{padding:60px 0;}}/*!sc*/
+h1,h2,h3,h4,h5,h6{margin:0 0 10px 0;font-weight:600;color:var(--lightest-slate);line-height:1.1;}/*!sc*/
+.big-heading{margin:0;font-size:clamp(40px,8vw,80px);}/*!sc*/
+.medium-heading{margin:0;font-size:clamp(40px,8vw,60px);}/*!sc*/
+.numbered-heading{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;margin:10px 0 40px;width:100%;font-size:clamp(26px,5vw,var(--fz-heading));white-space:nowrap;}/*!sc*/
+.numbered-heading:before{position:relative;bottom:4px;counter-increment:section;content:'0' counter(section) '.';margin-right:10px;color:var(--green);font-family:var(--font-mono);font-size:clamp(var(--fz-md),3vw,var(--fz-xl));font-weight:400;}/*!sc*/
+@media (max-width:480px){.numbered-heading:before{margin-bottom:-3px;margin-right:5px;}}/*!sc*/
+.numbered-heading:after{content:'';display:block;position:relative;top:-5px;width:300px;height:1px;margin-left:20px;background-color:var(--lightest-navy);}/*!sc*/
+@media (max-width:1080px){.numbered-heading:after{width:200px;}}/*!sc*/
+@media (max-width:768px){.numbered-heading:after{width:100%;}}/*!sc*/
+@media (max-width:600px){.numbered-heading:after{margin-left:10px;}}/*!sc*/
+img,svg,.gatsby-image-wrapper{width:100%;max-width:100%;vertical-align:middle;}/*!sc*/
+img[alt=""],img:not([alt]){-webkit-filter:blur(0px);filter:blur(0px);}/*!sc*/
+svg{width:100%;height:100%;fill:currentColor;vertical-align:middle;}/*!sc*/
+svg.feather{fill:none;}/*!sc*/
+a{display:inline-block;-webkit-text-decoration:none;text-decoration:none;-webkit-text-decoration-skip-ink:auto;text-decoration-skip-ink:auto;color:inherit;position:relative;-webkit-transition:var(--transition);transition:var(--transition);}/*!sc*/
+a:hover,a:focus{color:var(--green);}/*!sc*/
+a.inline-link{display:inline-block;position:relative;color:var(--green);-webkit-transition:var(--transition);transition:var(--transition);}/*!sc*/
+a.inline-link:hover,a.inline-link:focus-visible{color:var(--green);outline:0;}/*!sc*/
+a.inline-link:hover:after,a.inline-link:focus-visible:after{width:100%;}/*!sc*/
+a.inline-link:hover > *,a.inline-link:focus-visible > *{color:var(--green) !important;-webkit-transition:var(--transition);transition:var(--transition);}/*!sc*/
+a.inline-link:after{content:'';display:block;width:0;height:1px;position:relative;bottom:0.37em;background-color:var(--green);opacity:0.5;}/*!sc*/
+@media (prefers-reduced-motion:no-preference){a.inline-link:after{-webkit-transition:var(--transition);transition:var(--transition);}}/*!sc*/
+button{cursor:pointer;border:0;border-radius:0;}/*!sc*/
+input,textarea{border-radius:0;outline:0;}/*!sc*/
+input:focus,textarea:focus{outline:0;}/*!sc*/
+input:focus::-webkit-input-placeholder,textarea:focus::-webkit-input-placeholder,input:active::-webkit-input-placeholder,textarea:active::-webkit-input-placeholder{opacity:0.5;}/*!sc*/
+input:focus::-moz-placeholder,textarea:focus::-moz-placeholder,input:active::-moz-placeholder,textarea:active::-moz-placeholder{opacity:0.5;}/*!sc*/
+input:focus:-ms-input-placeholder,textarea:focus:-ms-input-placeholder,input:active:-ms-input-placeholder,textarea:active:-ms-input-placeholder{opacity:0.5;}/*!sc*/
+input:focus::placeholder,textarea:focus::placeholder,input:active::placeholder,textarea:active::placeholder{opacity:0.5;}/*!sc*/
+p{margin:0 0 15px 0;}/*!sc*/
+p:last-child,p:last-of-type{margin:0;}/*!sc*/
+p > a{display:inline-block;position:relative;color:var(--green);-webkit-transition:var(--transition);transition:var(--transition);}/*!sc*/
+p > a:hover,p > a:focus-visible{color:var(--green);outline:0;}/*!sc*/
+p > a:hover:after,p > a:focus-visible:after{width:100%;}/*!sc*/
+p > a:hover > *,p > a:focus-visible > *{color:var(--green) !important;-webkit-transition:var(--transition);transition:var(--transition);}/*!sc*/
+p > a:after{content:'';display:block;width:0;height:1px;position:relative;bottom:0.37em;background-color:var(--green);opacity:0.5;}/*!sc*/
+@media (prefers-reduced-motion:no-preference){p > a:after{-webkit-transition:var(--transition);transition:var(--transition);}}/*!sc*/
+p > code{background-color:var(--light-navy);color:var(--white);font-size:var(--fz-sm);border-radius:var(--border-radius);padding:0.3em 0.5em;}/*!sc*/
+ul.fancy-list{padding:0;margin:0;list-style:none;font-size:var(--fz-lg);}/*!sc*/
+ul.fancy-list li{position:relative;padding-left:30px;margin-bottom:10px;}/*!sc*/
+ul.fancy-list li:before{content:'▹';position:absolute;left:0;color:var(--green);}/*!sc*/
+blockquote{border-left-color:var(--green);border-left-style:solid;border-left-width:1px;margin-left:0px;margin-right:0px;padding-left:1.5rem;}/*!sc*/
+blockquote p{font-style:italic;font-size:24px;}/*!sc*/
+hr{background-color:var(--lightest-navy);height:1px;border-width:0px;border-style:initial;border-color:initial;border-image:initial;margin:1rem;}/*!sc*/
+code{font-family:var(--font-mono);font-size:var(--fz-md);}/*!sc*/
+.skip-to-content{color:var(--green);background-color:transparent;border:1px solid var(--green);border-radius:var(--border-radius);font-size:var(--fz-xs);font-family:var(--font-mono);line-height:1;-webkit-text-decoration:none;text-decoration:none;padding:1.25rem 1.75rem;-webkit-transition:var(--transition);transition:var(--transition);position:absolute;top:auto;left:-999px;width:1px;height:1px;overflow:hidden;z-index:-99;}/*!sc*/
+.skip-to-content:hover,.skip-to-content:focus-visible{outline:none;box-shadow:4px 4px 0 0 var(--green);-webkit-transform:translate(-5px,-5px);-ms-transform:translate(-5px,-5px);transform:translate(-5px,-5px);}/*!sc*/
+.skip-to-content:after{display:none !important;}/*!sc*/
+.skip-to-content:hover,.skip-to-content:focus{background-color:var(--green);color:var(--navy);top:0;left:0;width:auto;height:auto;overflow:auto;z-index:99;box-shadow:none;-webkit-transform:none;-ms-transform:none;transform:none;}/*!sc*/
+#logo{color:var(--green);}/*!sc*/
+.overline{color:var(--green);font-family:var(--font-mono);font-size:var(--fz-md);font-weight:400;}/*!sc*/
+.subtitle{color:var(--green);margin:0 0 20px 0;font-size:var(--fz-md);font-family:var(--font-mono);font-weight:400;line-height:1.5;}/*!sc*/
+@media (max-width:1080px){.subtitle{font-size:var(--fz-sm);}}/*!sc*/
+@media (max-width:768px){.subtitle{font-size:var(--fz-xs);}}/*!sc*/
+.subtitle a{display:inline-block;position:relative;color:var(--green);-webkit-transition:var(--transition);transition:var(--transition);line-height:1.5;}/*!sc*/
+.subtitle a:hover,.subtitle a:focus-visible{color:var(--green);outline:0;}/*!sc*/
+.subtitle a:hover:after,.subtitle a:focus-visible:after{width:100%;}/*!sc*/
+.subtitle a:hover > *,.subtitle a:focus-visible > *{color:var(--green) !important;-webkit-transition:var(--transition);transition:var(--transition);}/*!sc*/
+.subtitle a:after{content:'';display:block;width:0;height:1px;position:relative;bottom:0.37em;background-color:var(--green);opacity:0.5;}/*!sc*/
+@media (prefers-reduced-motion:no-preference){.subtitle a:after{-webkit-transition:var(--transition);transition:var(--transition);}}/*!sc*/
+.breadcrumb{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-bottom:50px;color:var(--green);}/*!sc*/
+.breadcrumb .arrow{display:block;margin-right:10px;padding-top:4px;}/*!sc*/
+.breadcrumb a{display:inline-block;position:relative;color:var(--green);-webkit-transition:var(--transition);transition:var(--transition);font-family:var(--font-mono);font-size:var(--fz-sm);font-weight:600;line-height:1.5;text-transform:uppercase;-webkit-letter-spacing:0.1em;-moz-letter-spacing:0.1em;-ms-letter-spacing:0.1em;letter-spacing:0.1em;}/*!sc*/
+.breadcrumb a:hover,.breadcrumb a:focus-visible{color:var(--green);outline:0;}/*!sc*/
+.breadcrumb a:hover:after,.breadcrumb a:focus-visible:after{width:100%;}/*!sc*/
+.breadcrumb a:hover > *,.breadcrumb a:focus-visible > *{color:var(--green) !important;-webkit-transition:var(--transition);transition:var(--transition);}/*!sc*/
+.breadcrumb a:after{content:'';display:block;width:0;height:1px;position:relative;bottom:0.37em;background-color:var(--green);opacity:0.5;}/*!sc*/
+@media (prefers-reduced-motion:no-preference){.breadcrumb a:after{-webkit-transition:var(--transition);transition:var(--transition);}}/*!sc*/
+.gatsby-image-outer-wrapper{height:100%;}/*!sc*/
+.fadeup-enter{opacity:0.01;-webkit-transform:translateY(20px);-ms-transform:translateY(20px);transform:translateY(20px);-webkit-transition:opacity 300ms var(--easing),-webkit-transform 300ms var(--easing);-webkit-transition:opacity 300ms var(--easing),transform 300ms var(--easing);transition:opacity 300ms var(--easing),transform 300ms var(--easing);}/*!sc*/
+.fadeup-enter-active{opacity:1;-webkit-transform:translateY(0px);-ms-transform:translateY(0px);transform:translateY(0px);-webkit-transition:opacity 300ms var(--easing),-webkit-transform 300ms var(--easing);-webkit-transition:opacity 300ms var(--easing),transform 300ms var(--easing);transition:opacity 300ms var(--easing),transform 300ms var(--easing);}/*!sc*/
+.fadedown-enter{opacity:0.01;-webkit-transform:translateY(-20px);-ms-transform:translateY(-20px);transform:translateY(-20px);-webkit-transition:opacity 300ms var(--easing),-webkit-transform 300ms var(--easing);-webkit-transition:opacity 300ms var(--easing),transform 300ms var(--easing);transition:opacity 300ms var(--easing),transform 300ms var(--easing);}/*!sc*/
+.fadedown-enter-active{opacity:1;-webkit-transform:translateY(0px);-ms-transform:translateY(0px);transform:translateY(0px);-webkit-transition:opacity 300ms var(--easing),-webkit-transform 300ms var(--easing);-webkit-transition:opacity 300ms var(--easing),transform 300ms var(--easing);transition:opacity 300ms var(--easing),transform 300ms var(--easing);}/*!sc*/
+.fade-enter{opacity:0;}/*!sc*/
+.fade-enter-active{opacity:1;-webkit-transition:opacity 300ms var(--easing);transition:opacity 300ms var(--easing);}/*!sc*/
+.fade-exit{opacity:1;}/*!sc*/
+.fade-exit-active{opacity:0;-webkit-transition:opacity 300ms var(--easing);transition:opacity 300ms var(--easing);}/*!sc*/
+.gatsby-highlight{background-color:#112340;color:#a2aabc;border-radius:var(--border-radius);margin:2em 0;padding:1.25em;overflow:auto;position:relative;font-family:var(--font-mono);font-size:var(--fz-md);}/*!sc*/
+.gatsby-highlight code[class*='language-'],.gatsby-highlight pre[class*='language-']{height:auto !important;font-size:var(--fz-sm);line-height:1.5;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;tab-size:2;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;}/*!sc*/
+.gatsby-highlight pre[class*='language-']{background-color:transparent;margin:0;padding:0;overflow:initial;float:left;min-width:100%;padding-top:2em;}/*!sc*/
+.gatsby-code-title{padding:1em 1.5em;font-family:var(--font-mono);font-size:var(--fz-xs);background-color:#112340;color:#a2aabc;border-top-left-radius:var(--border-radius);border-top-right-radius:var(--border-radius);border-bottom:1px solid #1d2d50;}/*!sc*/
+.gatsby-code-title + .gatsby-highlight{margin-top:0;border-top-left-radius:0;border-top-right-radius:0;}/*!sc*/
+.gatsby-highlight-code-line{display:block;background-color:#1d2d50;border-left:2px solid var(--green);padding-left:calc(1em + 2px);padding-right:1em;margin-right:-1.35em;margin-left:-1.35em;}/*!sc*/
+.gatsby-highlight pre[class*='language-']::before{background:var(--lightest-navy);color:var(--white);font-size:var(--fz-xxs);font-family:var(--font-mono);line-height:1.5;-webkit-letter-spacing:0.1em;-moz-letter-spacing:0.1em;-ms-letter-spacing:0.1em;letter-spacing:0.1em;text-transform:uppercase;border-radius:0 0 3px 3px;position:absolute;top:0;left:1.25rem;padding:0.25rem 0.5rem;}/*!sc*/
+.gatsby-highlight pre[class='language-javascript']::before{content:'js';}/*!sc*/
+.gatsby-highlight pre[class='language-js']::before{content:'js';}/*!sc*/
+.gatsby-highlight pre[class='language-jsx']::before{content:'jsx';}/*!sc*/
+.gatsby-highlight pre[class='language-graphql']::before{content:'GraphQL';}/*!sc*/
+.gatsby-highlight pre[class='language-html']::before{content:'html';}/*!sc*/
+.gatsby-highlight pre[class='language-css']::before{content:'css';}/*!sc*/
+.gatsby-highlight pre[class='language-mdx']::before{content:'mdx';}/*!sc*/
+.gatsby-highlight pre[class='language-shell']::before{content:'shell';}/*!sc*/
+.gatsby-highlight pre[class='language-sh']::before{content:'sh';}/*!sc*/
+.gatsby-highlight pre[class='language-bash']::before{content:'bash';}/*!sc*/
+.gatsby-highlight pre[class='language-yaml']::before{content:'yaml';}/*!sc*/
+.gatsby-highlight pre[class='language-markdown']::before{content:'md';}/*!sc*/
+.gatsby-highlight pre[class='language-json']::before,.gatsby-highlight pre[class='language-json5']::before{content:'json';}/*!sc*/
+.gatsby-highlight pre[class='language-diff']::before{content:'diff';}/*!sc*/
+.gatsby-highlight pre[class='language-text']::before{content:'text';}/*!sc*/
+.gatsby-highlight pre[class='language-flow']::before{content:'flow';}/*!sc*/
+.token{display:inline;}/*!sc*/
+.token.comment,.token.block-comment,.token.prolog,.token.doctype,.token.cdata{color:#8695b799;}/*!sc*/
+.token.punctuation{color:#a2aabc;}/*!sc*/
+.token.namespace,.token.deleted{color:#ef6b73;}/*!sc*/
+.token.function-name,.token.function,.token.class-name,.token.constant,.token.symbol{color:#ffd580;}/*!sc*/
+.token.attr-name,.token.operator,.token.rule{color:#ffae57;}/*!sc*/
+.token.keyword,.token.boolean,.token.number,.token.property{color:#c3a6ff;}/*!sc*/
+.token.tag,.token.selector,.token.important,.token.atrule,.token.builtin,.token.entity,.token.url{color:#5ccfe6;}/*!sc*/
+.token.string,.token.char,.token.attr-value,.token.regex,.token.variable,.token.inserted{color:#bae67e;}/*!sc*/
+.token.important,.token.bold{font-weight:600;}/*!sc*/
+.token.italic{font-style:italic;}/*!sc*/
+.token.entity{cursor:help;}/*!sc*/
+.namespace{opacity:0.7;}/*!sc*/
+data-styled.g1[id="sc-global-TlJMs1"]{content:"sc-global-TlJMs1,"}/*!sc*/
+.cZslOS{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-height:100vh;}/*!sc*/
+data-styled.g2[id="layout__StyledContent-sc-1yw8zls-0"]{content:"cZslOS,"}/*!sc*/
+.hLTFFw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:fixed;top:0;z-index:11;padding:0px 50px;width:100%;height:var(--nav-height);background-color:rgba(10,25,47,0.85);-webkit-filter:none !important;filter:none !important;pointer-events:auto !important;-webkit-user-select:auto !important;-moz-user-select:auto !important;-ms-user-select:auto !important;user-select:auto !important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);-webkit-transition:var(--transition);transition:var(--transition);}/*!sc*/
+@media (max-width:1080px){.hLTFFw{padding:0 40px;}}/*!sc*/
+@media (max-width:768px){.hLTFFw{padding:0 25px;}}/*!sc*/
+@media (prefers-reduced-motion:no-preference){}/*!sc*/
+data-styled.g5[id="nav__StyledHeader-ghklvd-0"]{content:"hLTFFw,"}/*!sc*/
+.kFCHyX{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;width:100%;color:var(--lightest-slate);font-family:var(--font-mono);counter-reset:item 0;z-index:12;}/*!sc*/
+.kFCHyX .logo{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}/*!sc*/
+.kFCHyX .logo a{color:var(--green);width:42px;height:42px;position:relative;z-index:1;}/*!sc*/
+.kFCHyX .logo a .hex-container{position:absolute;top:0;left:0;z-index:-1;}/*!sc*/
+@media (prefers-reduced-motion:no-preference){.kFCHyX .logo a .hex-container{-webkit-transition:var(--transition);transition:var(--transition);}}/*!sc*/
+.kFCHyX .logo a .logo-container{position:relative;width:45px;height:45px;z-index:1;}/*!sc*/
+.kFCHyX .logo a .logo-container svg{fill:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}/*!sc*/
+@media (prefers-reduced-motion:no-preference){.kFCHyX .logo a .logo-container svg{-webkit-transition:var(--transition);transition:var(--transition);}}/*!sc*/
+.kFCHyX .logo a .logo-container svg polygon{fill:var(--navy);}/*!sc*/
+.kFCHyX .logo a:hover,.kFCHyX .logo a:focus{outline:0;-webkit-transform:translate(-4px,-4px);-ms-transform:translate(-4px,-4px);transform:translate(-4px,-4px);}/*!sc*/
+.kFCHyX .logo a:hover .hex-container,.kFCHyX .logo a:focus .hex-container{-webkit-transform:translate(4px,3px);-ms-transform:translate(4px,3px);transform:translate(4px,3px);}/*!sc*/
+data-styled.g6[id="nav__StyledNav-ghklvd-1"]{content:"kFCHyX,"}/*!sc*/
+.ihALZY{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}/*!sc*/
+@media (max-width:768px){.ihALZY{display:none;}}/*!sc*/
+.ihALZY ol{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:0;margin:0;list-style:none;}/*!sc*/
+.ihALZY ol li{margin:0 5px;position:relative;counter-increment:item 1;font-size:var(--fz-xs);}/*!sc*/
+.ihALZY ol li a{padding:10px;}/*!sc*/
+.ihALZY ol li a:before{content:'0' counter(item) '.';margin-right:5px;color:var(--green);font-size:var(--fz-xxs);text-align:right;}/*!sc*/
+.ihALZY .resume-button{color:var(--green);background-color:transparent;border:1px solid var(--green);border-radius:var(--border-radius);padding:0.75rem 1rem;font-size:var(--fz-xs);font-family:var(--font-mono);line-height:1;-webkit-text-decoration:none;text-decoration:none;-webkit-transition:var(--transition);transition:var(--transition);margin-left:15px;font-size:var(--fz-xs);}/*!sc*/
+.ihALZY .resume-button:hover,.ihALZY .resume-button:focus-visible{outline:none;box-shadow:3px 3px 0 0 var(--green);-webkit-transform:translate(-4px,-4px);-ms-transform:translate(-4px,-4px);transform:translate(-4px,-4px);}/*!sc*/
+.ihALZY .resume-button:after{display:none !important;}/*!sc*/
+data-styled.g7[id="nav__StyledLinks-ghklvd-2"]{content:"ihALZY,"}/*!sc*/
+.dAwNpJ{display:none;}/*!sc*/
+@media (max-width:768px){.dAwNpJ{display:block;}}/*!sc*/
+data-styled.g8[id="menu__StyledMenu-sdn9y6-0"]{content:"dAwNpJ,"}/*!sc*/
+.eCxtrN{display:none;}/*!sc*/
+@media (max-width:768px){.eCxtrN{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;z-index:10;margin-right:-15px;padding:15px;border:0;background-color:transparent;color:inherit;text-transform:none;-webkit-transition-timing-function:linear;transition-timing-function:linear;-webkit-transition-duration:0.15s;transition-duration:0.15s;-webkit-transition-property:opacity,filter;transition-property:opacity,filter;}}/*!sc*/
+.eCxtrN .ham-box{display:inline-block;position:relative;width:var(--hamburger-width);height:24px;}/*!sc*/
+.eCxtrN .ham-box-inner{position:absolute;top:50%;right:0;width:var(--hamburger-width);height:2px;border-radius:var(--border-radius);background-color:var(--green);-webkit-transition-duration:0.22s;transition-duration:0.22s;-webkit-transition-property:-webkit-transform;-webkit-transition-property:transform;transition-property:transform;-webkit-transition-delay:0s;transition-delay:0s;-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);-webkit-transition-timing-function:cubic-bezier( 0.55,0.055,0.675,0.19 );transition-timing-function:cubic-bezier( 0.55,0.055,0.675,0.19 );}/*!sc*/
+.eCxtrN .ham-box-inner:before,.eCxtrN .ham-box-inner:after{content:'';display:block;position:absolute;left:auto;right:0;width:var(--hamburger-width);height:2px;border-radius:4px;background-color:var(--green);-webkit-transition-timing-function:ease;transition-timing-function:ease;-webkit-transition-duration:0.15s;transition-duration:0.15s;-webkit-transition-property:-webkit-transform;-webkit-transition-property:transform;transition-property:transform;}/*!sc*/
+.eCxtrN .ham-box-inner:before{width:120%;top:-10px;opacity:1;-webkit-transition:var(--ham-before);transition:var(--ham-before);}/*!sc*/
+.eCxtrN .ham-box-inner:after{width:80%;bottom:-10px;-webkit-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0);-webkit-transition:var(--ham-after);transition:var(--ham-after);}/*!sc*/
+data-styled.g9[id="menu__StyledHamburgerButton-sdn9y6-1"]{content:"eCxtrN,"}/*!sc*/
+.lknEs{display:none;}/*!sc*/
+@media (max-width:768px){.lknEs{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:fixed;top:0;bottom:0;right:0;padding:50px 10px;width:min(75vw,400px);height:100vh;outline:0;background-color:var(--light-navy);box-shadow:-10px 0px 30px -15px var(--navy-shadow);z-index:9;-webkit-transform:translateX(100vw);-ms-transform:translateX(100vw);transform:translateX(100vw);visibility:hidden;-webkit-transition:var(--transition);transition:var(--transition);}}/*!sc*/
+.lknEs nav{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;color:var(--lightest-slate);font-family:var(--font-mono);text-align:center;}/*!sc*/
+.lknEs ol{padding:0;margin:0;list-style:none;width:100%;}/*!sc*/
+.lknEs ol li{position:relative;margin:0 auto 20px;counter-increment:item 1;font-size:clamp(var(--fz-sm),4vw,var(--fz-lg));}/*!sc*/
+@media (max-width:600px){.lknEs ol li{margin:0 auto 10px;}}/*!sc*/
+.lknEs ol li:before{content:'0' counter(item) '.';display:block;margin-bottom:5px;color:var(--green);font-size:var(--fz-sm);}/*!sc*/
+.lknEs ol a{display:inline-block;-webkit-text-decoration:none;text-decoration:none;-webkit-text-decoration-skip-ink:auto;text-decoration-skip-ink:auto;color:inherit;position:relative;-webkit-transition:var(--transition);transition:var(--transition);width:100%;padding:3px 20px 20px;}/*!sc*/
+.lknEs ol a:hover,.lknEs ol a:focus-visible{color:var(--green);outline:0;}/*!sc*/
+.lknEs .resume-link{color:var(--green);background-color:transparent;border:1px solid var(--green);border-radius:var(--border-radius);padding:1.25rem 1.75rem;font-size:var(--fz-sm);font-family:var(--font-mono);line-height:1;-webkit-text-decoration:none;text-decoration:none;-webkit-transition:var(--transition);transition:var(--transition);padding:18px 50px;margin:10% auto 0;width:-webkit-max-content;width:-moz-max-content;width:max-content;}/*!sc*/
+.lknEs .resume-link:hover,.lknEs .resume-link:focus-visible{outline:none;box-shadow:4px 4px 0 0 var(--green);-webkit-transform:translate(-5px,-5px);-ms-transform:translate(-5px,-5px);transform:translate(-5px,-5px);}/*!sc*/
+.lknEs .resume-link:after{display:none !important;}/*!sc*/
+data-styled.g10[id="menu__StyledSidebar-sdn9y6-2"]{content:"lknEs,"}/*!sc*/
+.hOvuuP{width:40px;position:fixed;bottom:0;left:40px;right:auto;z-index:10;color:var(--light-slate);}/*!sc*/
+@media (max-width:1080px){.hOvuuP{left:20px;right:auto;}}/*!sc*/
+@media (max-width:768px){.hOvuuP{display:none;}}/*!sc*/
+.jSIwrL{width:40px;position:fixed;bottom:0;left:auto;right:40px;z-index:10;color:var(--light-slate);}/*!sc*/
+@media (max-width:1080px){.jSIwrL{left:auto;right:20px;}}/*!sc*/
+@media (max-width:768px){.jSIwrL{display:none;}}/*!sc*/
+data-styled.g11[id="side__StyledSideElement-sc-1duznzb-0"]{content:"hOvuuP,jSIwrL,"}/*!sc*/
+.dVLQAC{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0;padding:0;list-style:none;}/*!sc*/
+.dVLQAC:after{content:'';display:block;width:1px;height:90px;margin:0 auto;background-color:var(--light-slate);}/*!sc*/
+.dVLQAC li:last-of-type{margin-bottom:20px;}/*!sc*/
+.dVLQAC li a{padding:10px;}/*!sc*/
+.dVLQAC li a:hover,.dVLQAC li a:focus{-webkit-transform:translateY(-3px);-ms-transform:translateY(-3px);transform:translateY(-3px);}/*!sc*/
+.dVLQAC li a svg{width:20px;height:20px;}/*!sc*/
+data-styled.g12[id="social__StyledSocialList-anu6nt-0"]{content:"dVLQAC,"}/*!sc*/
+.jJFfEJ{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;}/*!sc*/
+.jJFfEJ:after{content:'';display:block;width:1px;height:90px;margin:0 auto;background-color:var(--light-slate);}/*!sc*/
+.jJFfEJ a{margin:20px auto;padding:10px;font-family:var(--font-mono);font-size:var(--fz-xxs);line-height:var(--fz-lg);-webkit-letter-spacing:0.1em;-moz-letter-spacing:0.1em;-ms-letter-spacing:0.1em;letter-spacing:0.1em;-webkit-writing-mode:vertical-rl;-ms-writing-mode:tb-rl;writing-mode:vertical-rl;}/*!sc*/
+.jJFfEJ a:hover,.jJFfEJ a:focus{-webkit-transform:translateY(-3px);-ms-transform:translateY(-3px);transform:translateY(-3px);}/*!sc*/
+data-styled.g13[id="email__StyledLinkWrapper-sc-2epoq-0"]{content:"jJFfEJ,"}/*!sc*/
+.earxGk{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:auto;min-height:70px;padding:15px;text-align:center;}/*!sc*/
+data-styled.g14[id="footer__StyledFooter-sc-4jwnt4-0"]{content:"earxGk,"}/*!sc*/
+.iKeBGp{display:none;}/*!sc*/
+@media (max-width:768px){.iKeBGp{display:block;width:100%;max-width:270px;margin:0 auto 10px;color:var(--light-slate);}}/*!sc*/
+.iKeBGp ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:0;margin:0;list-style:none;}/*!sc*/
+.iKeBGp ul a{padding:10px;}/*!sc*/
+.iKeBGp ul a svg{width:20px;height:20px;}/*!sc*/
+data-styled.g15[id="footer__StyledSocialLinks-sc-4jwnt4-1"]{content:"iKeBGp,"}/*!sc*/
+.fLSMpu{color:var(--light-slate);font-family:var(--font-mono);font-size:var(--fz-xxs);line-height:1;}/*!sc*/
+.fLSMpu a{padding:10px;}/*!sc*/
+.fLSMpu .github-stats{margin-top:10px;}/*!sc*/
+.fLSMpu .github-stats > span{display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:0 7px;}/*!sc*/
+.fLSMpu .github-stats svg{display:inline-block;margin-right:5px;width:14px;height:14px;}/*!sc*/
+data-styled.g16[id="footer__StyledCredit-sc-4jwnt4-2"]{content:"fLSMpu,"}/*!sc*/
+.fxwTfe{max-width:1000px;}/*!sc*/
+data-styled.g46[id="post__StyledPostContainer-sc-8858gx-0"]{content:"fxwTfe,"}/*!sc*/
+.hfhtkj{margin-bottom:50px;}/*!sc*/
+.hfhtkj .tag{margin-right:10px;}/*!sc*/
+data-styled.g47[id="post__StyledPostHeader-sc-8858gx-1"]{content:"hfhtkj,"}/*!sc*/
+.ewCocl{margin-bottom:100px;}/*!sc*/
+.ewCocl h1,.ewCocl h2,.ewCocl h3,.ewCocl h4,.ewCocl h5,.ewCocl h6{margin:2em 0 1em;}/*!sc*/
+.ewCocl p{margin:1em 0;line-height:1.5;color:var(--light-slate);}/*!sc*/
+.ewCocl a{display:inline-block;position:relative;color:var(--green);-webkit-transition:var(--transition);transition:var(--transition);}/*!sc*/
+.ewCocl a:hover,.ewCocl a:focus-visible{color:var(--green);outline:0;}/*!sc*/
+.ewCocl a:hover:after,.ewCocl a:focus-visible:after{width:100%;}/*!sc*/
+.ewCocl a:hover > *,.ewCocl a:focus-visible > *{color:var(--green) !important;-webkit-transition:var(--transition);transition:var(--transition);}/*!sc*/
+.ewCocl a:after{content:'';display:block;width:0;height:1px;position:relative;bottom:0.37em;background-color:var(--green);opacity:0.5;}/*!sc*/
+@media (prefers-reduced-motion:no-preference){.ewCocl a:after{-webkit-transition:var(--transition);transition:var(--transition);}}/*!sc*/
+.ewCocl code{background-color:var(--lightest-navy);color:var(--lightest-slate);border-radius:var(--border-radius);font-size:var(--fz-sm);padding:0.2em 0.4em;}/*!sc*/
+.ewCocl pre code{background-color:transparent;padding:0;}/*!sc*/
+data-styled.g48[id="post__StyledPostContent-sc-8858gx-2"]{content:"ewCocl,"}/*!sc*/
+</style><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml"/><link rel="icon" href="/favicon-32x32.png?v=26bc64b0f35033493b8401970063fb15" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#0a192f"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=26bc64b0f35033493b8401970063fb15"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=26bc64b0f35033493b8401970063fb15"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=26bc64b0f35033493b8401970063fb15"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=26bc64b0f35033493b8401970063fb15"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=26bc64b0f35033493b8401970063fb15"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=26bc64b0f35033493b8401970063fb15"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=26bc64b0f35033493b8401970063fb15"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=26bc64b0f35033493b8401970063fb15"/><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link as="script" rel="preload" href="/webpack-runtime-991b60b8a551cf0d3f61.js"/><link as="script" rel="preload" href="/framework-b2d6e508d75a672689cc.js"/><link as="script" rel="preload" href="/app-6633e244a2035aa75c7b.js"/><link as="script" rel="preload" href="/f08cfbb8d9b5435dc4e321cb57a03fac03337210-fa108e076fc515d8514e.js"/><link as="script" rel="preload" href="/component---src-templates-post-js-af94407ace8c7faaa0a2.js"/><link as="fetch" rel="preload" href="/page-data/blog/arch/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1994492073.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2009693873.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2031412112.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3825832676.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body class=""><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div id="root"><a class="skip-to-content" href="#content">Skip to Content</a><div class="layout__StyledContent-sc-1yw8zls-0 cZslOS"><header class="nav__StyledHeader-ghklvd-0 hLTFFw"><nav class="nav__StyledNav-ghklvd-1 kFCHyX"><div class="logo" tabindex="-1"><a aria-label="home" href="/"><div class="logo-container"><img src="data:image/png;base64,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X7b2S7lJj/UzLZ4KXu7UzghO1BWGHnvlJWWc9FiyIJHzkW54r2bzku7qfc3m5Gq9OiqTyUT2WFImsh59ktqhoNSE1YaWF4os5+p0u816SRmr08qNFsuclsAyPZJmOw0vA8vmWERqomCV4aoB9rELBqv1kheKLJeWwBIMLDp90noiG7qUsWpkNj2WFEhFYKVtmGfDy8AqLmADFJHlZGZOtoNNT2x7eszmtWS9UhFYHAp2Uj41QNtlkcCKLOfTenVU2oKPgeWQtIzIhi4BY9WApOIiy0mZVARW9guOnUlqA8t291VkP7rygqyX7apF6kw9Vtqkucfqobd5SStNVeOShS1YYFFy0txjWTVAm2MRn9h2r1JxqeqJu5rUBpZVdyWaLIr61EvIslitmlRc5DLb7nyo8FIbWLOAeQuB+74NLJb0dzcDi24B7pgP3Cb5BbcC35G04LHgWyF+sHwbQfYF0Vx/GTROLS0tkdulM57gcG4YMNTsbV2lR4Ef66xjZbNeK4EfafG8bD5cLC/0uBb32urVq9eZ0+n58EO41CEzgTnSEy+S3va70hPfbnpgk6Q3/o5J5j5Jt/rUExeATW/EHqujunKPVciUlh7L8ouOqbpisZc9Vr3jM14yM6vjGoqHxI3NMVaqRldeLqy08uOadUJmdlpXDqKCsRnmMbA6qho48lHwAW43dgO7NBurBHpiGRH6z+aMn/RqDKxC+KnlV+876qikFwAnFypx3RN/ApzQrNeahGZzam5udrajLQRvA+t7wOLtwE6djIWpzfnAPNNDtt4TL5lPbYXDYaf0xO9q1mtVVVWVms2psrLyQ81SRw0A+j0ALN0BvFMD1NTJHl/TJ5LqJZ3Q21OTud+khjYpmK6V24PAx+uAly8PLm/u1nLgsVPP3sWRZF3NdRX762y9ds0113wjOPWXxx8ILU6eSvT9EHNtwdeBt8KCoVBJxkwt1wI36SxT4ZVXXvm1xtDnrF+//ldajCi3UqDv/cB90hO/LcPDj+U4r056mGOSsr1xrpTtjU0P3CipSVOz9MSN0hNXvwT822WA/KXPI6K2tvaICSY5pmqurq7+eMmSJUv1YSLqiNGjR48877zzRugkERERERERERERERERERERERERERERERERERERERERERERWehMP42S/SXEFknZ9TLX5ORPipJzaQ+snk+LmaJfv369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"/></div></a></div><div class="nav__StyledLinks-ghklvd-2 ihALZY"><ol><li><a href="/#about">About</a></li><li><a href="/#jobs">Experience</a></li><li><a href="/#projects">Work</a></li><li><a href="/#contact">Contact</a></li></ol><div><a aria-label="home" href="/blog"><a class="resume-button">Blog</a></a></div></div><div class="menu__StyledMenu-sdn9y6-0 dAwNpJ"><div><button aria-label="Menu" class="menu__StyledHamburgerButton-sdn9y6-1 eCxtrN"><div class="ham-box"><div class="ham-box-inner"></div></div></button><aside aria-hidden="true" tabindex="-1" class="menu__StyledSidebar-sdn9y6-2 lknEs"><nav><ol><li><a href="/#about">About</a></li><li><a href="/#jobs">Experience</a></li><li><a href="/#projects">Work</a></li><li><a href="/#contact">Contact</a></li></ol><a aria-label="home" href="/blog"><a class="resume-link">Blog</a></a></nav></aside></div></div></nav></header><div orientation="left" class="side__StyledSideElement-sc-1duznzb-0 hOvuuP"><ul class="social__StyledSocialList-anu6nt-0 dVLQAC"><li><a href="https://github.com/adithyaanilkumar" aria-label="GitHub" target="_blank" rel="noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></li><li><a href="https://www.instagram.com/adixthya" aria-label="Instagram" target="_blank" rel="noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><title>Instagram</title><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a></li><li><a href="https://twitter.com/adixthya" aria-label="Twitter" target="_blank" rel="noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><title>Twitter</title><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a></li><li><a href="https://www.linkedin.com/in/adithyaanilkumar" aria-label="Linkedin" target="_blank" rel="noreferrer"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><title>LinkedIn</title><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></li></ul></div><div orientation="right" class="side__StyledSideElement-sc-1duznzb-0 jSIwrL"><div class="email__StyledLinkWrapper-sc-2epoq-0 jJFfEJ"><a href="mailto:adithyaanilkumar1@gmail.com">adithyaanilkumar1@gmail.com</a></div></div><div id="content"><main class="post__StyledPostContainer-sc-8858gx-0 fxwTfe"><span class="breadcrumb"><span class="arrow">←</span><a href="/blog">All Blogs</a></span><header class="post__StyledPostHeader-sc-8858gx-1 hfhtkj"><h1 class="medium-heading">Arch Linux Nightmare</h1><p class="subtitle"><time>March 16, 2020</time><span> — </span><a class="tag" href="/blog/tags/arch/">#<!-- -->Arch</a><a class="tag" href="/blog/tags/kde/">#<!-- -->KDE</a><a class="tag" href="/blog/tags/linux/">#<!-- -->Linux</a></p></header><div class="post__StyledPostContent-sc-8858gx-2 ewCocl"><h1>Installing Arch Linux with KDE Plasma or GNOME Desktop ( Dual Booting with Windows)</h1>
+<p>Hi Guys! Most of us today maybe using Windows as our daily driver. For most daily tasks, windows is more than enough. But the question you need to be asking is , is windows really necessary? I agree that window is pretty powerful, but most of us do not realize how heavy it is on the system.</p>
+<p>Is your computer getting slow running windows? Do you have an old or low end PC which lags while running windows? Do you wish to switch to something light, something which will run smoothly on most hardware configurations? Then you are in the right place.</p>
+<p>Today we will be seeing how you can dual boot <strong>Arch Linux <strong>with</strong> Windows.</strong></p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*JPGVwNVRSjYlWMB0ExACBg.jpeg" alt="Arch Linux is light but powerful"><em>Arch Linux is light but powerful</em></p>
+<p><strong>Arch Linux</strong> is ranked as one of the best and lightest Linux distros. It is highly customizable and can be configured according to the user's needs.Unlike other popular distros like <strong>Ubuntu</strong> which is based on <strong>Debian</strong>, <strong>Arch Linux</strong> was built from scratch independent of any other Linux distribution.<strong>Arch Linux</strong> is a rolling release which means that it eradicates the system update frenzy that users of other distro types go through. Because it's a rolling release, its core system is always up to date with the latest fixes and new features and you wouldn't have to worry about when to install what and how long system updates will take.</p>
+<p>So without further ado, Lets get started!</p>
+<h2>Prerequisites</h2>
+<ul>
+<li>
+<p>A bootable USB of at least 8Gb size.</p>
+</li>
+<li>
+<p>UEFI BIOS mode on your PC</p>
+</li>
+<li>
+<p>Basic understanding of Linux Bash</p>
+<blockquote>
+<p>I recommend everyone to use the <a href="https://wiki.archlinux.org/" target="_blank" rel="nofollow noopener noreferrer">Arch wiki</a> as it will teach you the fundamentals of how to install and manage an operating system .Use this guide as a reference if you cannot understand the steps provided in the <a href="https://wiki.archlinux.org/" target="_blank" rel="nofollow noopener noreferrer">Arch wiki</a>.</p>
+</blockquote>
+</li>
+</ul>
+<h2>Step 0: Creating the Boot-able USB</h2>
+<ul>
+<li>
+<p>Download the <a href="https://www.archlinux.org/download/" target="_blank" rel="nofollow noopener noreferrer">Arch Linux ISO</a>.</p>
+</li>
+<li>
+<p>Download <a href="https://rufus.ie/" target="_blank" rel="nofollow noopener noreferrer">Rufus</a>.</p>
+</li>
+<li>
+<p>Insert pen drive into the PC and open Rufus</p>
+</li>
+<li>
+<p>Open the Arch Linux ISO in Rufus</p>
+</li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*chBQNN28yOOAMyx3JC7F1g.jpeg" alt="It should look something similar to this"><em>It should look something similar to this</em></p>
+<ul>
+<li>Click on start and wait for the process to finish.</li>
+</ul>
+<h2>Step 1: Partitioning Windows.</h2>
+<ul>
+<li>
+<p>Go to windows disk management tool and select the disk you want to install Arch Linux on.</p>
+</li>
+<li>
+<p>Right-click and tap on shrink volume, allocate the necessary size required for the arch Linux partition(Min 10 Gb).</p>
+</li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*v-DpkCs7b0BKtHEeVpXXUA.jpeg" alt=""></p>
+<h2>Step 2: Live boot into the installation media</h2>
+<ul>
+<li>
+<p>Reboot your system and go into the boot manager. For HP devices its Esc .</p>
+</li>
+<li>
+<p>Boot into the USB device.</p>
+</li>
+<li>
+<p>After booting into the installation media, make sure you are connected to the internet. This is essential for the next steps.</p>
+</li>
+<li>
+<p>To connect to WiFi, type the command wifi-menu and connect to the respective WiFi network. Test the connection by pinging the google server with ping google.com . You should see the ping.</p>
+</li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*lFS__6PMZ_VYQQsrSryqVA.png" alt="Ping should show up like this"><em>Ping should show up like this</em></p>
+<h2>Step 3: Create Linux Partitions</h2>
+<ul>
+<li>
+<p>Set the clock on the system</p>
+<p>timedatectl set-ntp true</p>
+</li>
+<li>
+<p>Type the following commands to create <strong>three</strong> partitions required for the <strong>Arch Linux</strong> installation.</p>
+<p>fdisk -l</p>
+</li>
+</ul>
+<p>This will list all the disks on your device and its partions.</p>
+<p>Select the disk by:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">fdisk /dev/&lt;disk_name></code></pre></div>
+<p>Here, <strong>&#x3C;disk_name></strong> should be replaced by the name of your disk where you wish to install <strong>Arch Linux</strong> on and the disk you had created an unallocated space in the windows disk management tool.</p>
+<p>In my case, It is:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">fdisk /dev/sda</code></pre></div>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*oCKGugrWVMDB4uzI9ttAow.jpeg" alt="it&#x27;ll be /dev/nvme0n1 if it is an SSD and If it is a HDD, itll be /dev/sda">*it'll be <strong>/dev/nvme0n1</strong> if it is an <strong>SSD</strong> and If it is a <strong>HDD</strong>, itll be <strong>/dev/sda*</strong></p>
+<p>Follow the following commands:</p>
+<p>(The lines after <strong>//</strong> are comments for you to understand. Don't type them in bash)</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">command (m for help): n //press n here
+Partition Number (5-128, default 5):5
+First Sector: //press enter
+Last Sector: +512M //press enter after entering the size.</code></pre></div>
+<p>Now to change the filesystem to a <strong>EFI</strong> filesystem, press t.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">command (m for help): t//press t here
+Partition Number: 5
+Partition Type: 1 //press one and press enter</code></pre></div>
+<p>Now to create the partition where you will be storing all of your data,</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">command (m for help): n //press n here
+Partition Number (6-128, default 6):6
+First Sector: //press enter
+Last Sector: +8G //press enter after entering the size.</code></pre></div>
+<p>Now to create the third and final partition for the <strong>SWAP</strong> file,</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">command (m for help): n //press n here
+Partition Number (7-128, default 7):7
+First Sector: //press enter
+Last Sector: //press enter , the size will be filled automatically</code></pre></div>
+<p>Now to change the filesystem to a <strong>SWAP</strong> filesystem, press t.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">command (m for help): t//press there
+Partition Number: 7
+Partition Type: 19//type 19 and press enter</code></pre></div>
+<p>Make sure the partitions are correct, by typing p,</p>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*coj7eBV7mU5ROgWmoSgXpg.jpeg" alt="The partitions should look like this"><em>The partitions should look like this</em></p>
+<p>If they are correct, write the changes by pressing w and enter .</p>
+<ul>
+<li><strong>Lets wipe the EFI partition to FAT32 format</strong></li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*d_9Z37b5D-s8G61hl0Tf_w.png" alt="EFI partition(device) is** /dev/sda5 **in my case. It may vary in your case."><strong>*EFI</strong> partition(device) is** /dev/sda5 **in my case. It may vary in your case.*</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">mkfs.fat -F32 /dev/&lt;EFI Partition device></code></pre></div>
+<p>(replace <strong><EFI Partition device></strong> with the <strong>EFI</strong> partition device ,ie **/dev/sda5 **in my case.)</p>
+<p>So in my case it'll be:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">mkfs.fat -F32 /dev/sda5</code></pre></div>
+<ul>
+<li><strong>Lets make the SWAP volume now.</strong></li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*OBI3w7XH9LrcRyYk5FP_NA.png" alt="SWAP partition(device) is /dev/sda7 in my case. it may vary in yours"><strong>*SWAP</strong> partition(device) is <strong>/dev/sda7</strong> in my case. it may vary in yours*</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">mkswap /dev/&lt;SWAP Partition device>
+swapon /dev/&lt;SWAP Partition device></code></pre></div>
+<p>(replace <strong><SWAP Partition device></strong> with the <strong>SWAP</strong> partition device ,ie <strong>/dev/sda7</strong> in my case.)</p>
+<p>So in my case it'll be:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">mkswap /dev/sda7
+swapon /dev/sda7</code></pre></div>
+<blockquote>
+<p><strong>Linux</strong> can handle both <strong>ext4</strong> and <strong>NTFS</strong> filesystems . But we are going to use the <strong>ext4</strong> filesystem as <strong>ext4</strong> can support individual files up to 16 terabytes, and volumes up to one exabyte in size.</p>
+</blockquote>
+<ul>
+<li><strong>Lets make the ext4 partition on our main drive.</strong></li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*HlendzrtexKX5PFCxMbHXQ.png" alt="Linux Filesystem Partition(device) is** /dev/sda**6 in my case. It may vary in yours."><strong>*Linux Filesystem Partition</strong>(device) is** /dev/sda**6 in my case. It may vary in yours.*</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">mkfs.ext4 /dev/&lt;Linux Filesystem Device></code></pre></div>
+<p>(replace **<Linux filesystem device> **with the Linux filesystem partition device ,ie <strong>/dev/sda6</strong> in my case.)</p>
+<p>So in my case it'll be:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">mkfs.ext4 /dev/sda6</code></pre></div>
+<h2>Step 4: Mount EFI and Linux filesystem</h2>
+<ul>
+<li>
+<p><strong>Mount the Linux Filesystem partition device to /mnt</strong></p>
+<p>mount /dev/<Linux Filesystem Device> /mnt</p>
+</li>
+</ul>
+<p>(replace <strong><Linux filesystem device></strong> with the Linux filesystem partition device ,i.e <strong>/dev/sda6</strong> in my case.)</p>
+<p>So in my case it'll be:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">mount /dev/sda6 /mnt</code></pre></div>
+<ul>
+<li>
+<p><strong>Mount the EFI partition device to /mnt/boot</strong></p>
+<p>mkdir /mnt/boot</p>
+<p>mount /dev/<EFI partition device> /mnt/boot</p>
+</li>
+</ul>
+<p>(replace <strong><EFI partition device></strong> with the EFI partition device ,ie **/dev/sda5 **in my case.)</p>
+<p>So in my case it'll be:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">mount /dev/sda5 /mnt/boot</code></pre></div>
+<p>After mounting check whether it is actually mounted by using the command :</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">df</code></pre></div>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*44lwpGGibkvVACGU-MMhYA.png" alt="The two mount points should show up like this"><em>The two mount points should show up like this</em></p>
+<h2>Step 5: Installing the Linux Firmware to our system</h2>
+<ul>
+<li>
+<p>Now that you have all your partitions set, we can proceed to installing the Linux firmware onto the mounted partitions. To do this, type the following command</p>
+<p>pacstrap /mnt base linux linux-firmware</p>
+</li>
+</ul>
+<p>Get a cup of coffee and relax for a while, the installation may take a while depending upon your network speed.</p>
+<ul>
+<li>
+<p>After the installation is complete, run the following command to generate <strong>fstab</strong>.</p>
+<p>genfstab -U /mnt >> /mnt/etc/fstab</p>
+</li>
+</ul>
+<p>After running generating <strong>fstab</strong>, check the generated file by:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">vi /mnt/etc/fstab</code></pre></div>
+<p><img src="https://cdn-images-1.medium.com/max/2106/1*cV1DD5IpLn_uEq4mHQ9SAg.png" alt="It should show something similar , if not the same, don&#x27;t worry, it just needs to have **/dev/<partition name> **line in it"><em>It should show something similar , if not the same, don't worry, it just needs to have **/dev/<partition name> **line in it</em></p>
+<p>Exit by pressing Esc and typing :q</p>
+<h2><strong>Step 6:Lets Change Root to our installed system</strong></h2>
+<ul>
+<li>
+<p>Change root into the installed system by typing:</p>
+<p>arch-chroot /mnt</p>
+</li>
+</ul>
+<h2>Step 7: Set Timezone of your system</h2>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">cd /usr/share/zoneinfo/Asia
+ls</code></pre></div>
+<p>If your zone is Asia , type</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">cd /usr/share/zoneinfo/Asia</code></pre></div>
+<p>And respectively for other zones. Form the list find your region.In my case it is Kolkata as im living in India.</p>
+<p>With the zone and region figured out, enter it into /etc/localtime</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime</code></pre></div>
+<h2>Step 8: Sync the hardware clock</h2>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">hwclock --systohc</code></pre></div>
+<h2>Step 9: Generate Locales</h2>
+<ul>
+<li>
+<p>Install text editor nano :</p>
+<p>pacman -Sy nano</p>
+</li>
+</ul>
+<p>We need to edit the loacle.gen file using nano</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">nano /etc/locale.gen</code></pre></div>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*ib2wi8cnNEGSiIKpx_mVBg.png" alt="Clear the # before en_US.UTF-8 UTF-8"><em>Clear the # before en_US.UTF-8 UTF-8</em></p>
+<p>Scroll down to en_US.UTF-8 UTF-8 and clear the # before the text</p>
+<p>Save by pressing CTRl+o, press enter and exit by pressing CTRL+x</p>
+<p><strong>Generate locale</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">locale-gen</code></pre></div>
+<p><img src="https://cdn-images-1.medium.com/max/2016/1*qbvnKcmOgZS2oJm1b2lqBg.png" alt="You should see this as the result"><em>You should see this as the result</em></p>
+<p><strong>Create locale.conf</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">nano locale.conf</code></pre></div>
+<p>Type the following into the file:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">LANG=en_US.UTF-8</code></pre></div>
+<p>CTRL+o to save, press enter and CTRL+x to exit.</p>
+<h2>Step 10: Create Hostname</h2>
+<p><strong>To create Hostname file</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">nano /etc/hostname</code></pre></div>
+<p>And type your desired hostname into the file.</p>
+<p>My hostname is <strong>adithya</strong> and hence it type it,type <strong>yours</strong> into the file.</p>
+<p>CTRL+o to save , press enter and CTRL+x to exit.</p>
+<p><strong>To create Hosts</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">nano /etc/hosts</code></pre></div>
+<p>At the end of the file(next line available), add the lines:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">127.0.0.1    localhost
+::1          localhost
+127.0.1.1    adithya.localdomain adithya</code></pre></div>
+<p>Replace adithya with <your hostname> .</p>
+<p>CTRL+o to save , press enter and CTRL+x to exit.</p>
+<h2>Step 11: Set Root Password</h2>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">passwd</code></pre></div>
+<p>Enter the password, press enter and retype the pasword.</p>
+<h2>Step 12: Add user and set Password for the user</h2>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">useradd -g users -G power,storage,wheel -m &lt;username></code></pre></div>
+<p>Replace <strong><username></strong> with a username of your choice.</p>
+<p>If it doesnt work , try</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">useradd -g users -G power,wheel -m &lt;username></code></pre></div>
+<p><strong>Add Password</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">passwd &lt;username></code></pre></div>
+<p>Replace <strong><username></strong> with your username.</p>
+<p>Enter the <strong>password</strong>, press enter and retype the <strong>pasword</strong>.</p>
+<h2><strong>Step 13: Install Boot Manager</strong></h2>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">pacman -S grub efibootmgr os-prober</code></pre></div>
+<p>check install by typing os-prober , it shouldnt show any error</p>
+<p><strong>Install grub</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">grub-install --target=x86_64-efi --efi-directory=/boot/ --bootloader-id=GRUB</code></pre></div>
+<p>This is a single line command, with a space in between /boot/ and ' bootloader-id</p>
+<p><strong>Mount Windows EFI System</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">fdisk -l</code></pre></div>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*7ywTBMtjlXpvytxO45x_HQ.png" alt="Here my EFI for windows is /dev/sda2. It may vary in your case"><em>Here my EFI for windows is /dev/sda2. It may vary in your case</em></p>
+<p>Find your <strong>windows</strong> <strong>EFI</strong> <strong>partition</strong> device id. Mine is <strong>/dev/sda2.</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">mkdir /mnt2/
+
+mount /dev/sda2 /mnt2</code></pre></div>
+<p>(Replace <strong>/dev/sda2</strong> with your **windows EFI partition **device id.)</p>
+<p>After that we need to make the <strong>config</strong> file for grub .</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">grub-mkconfig -o /boot/grub/grub.config</code></pre></div>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*Q48o9ZPODVp2HutWFgQNMw.png" alt="If all goes well, It should show up like this"><em>If all goes well, It should show up like this</em></p>
+<h2>Step 14: Installing Network Drivers</h2>
+<p>This is a really important step as without network drivers, you will not be able to connect to <strong>WiFi</strong>. This is the step that most people forget to do and end up having to live boot into Arch USB again to install it later.</p>
+<p><strong>To install Network Drivers:</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">pacman -S networkmanager network-manager-applet dialog wireless_tools wpa_supplicant mtools dosfstools base-devel
+linux-headers</code></pre></div>
+<p>The whole command is a single line and <strong>not</strong> multiple lines, with space in between dialog and wireless_tools and space between base-devel and linux-headers.</p>
+<p>After the installation is complete, type:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">exit
+
+unmount -a</code></pre></div>
+<p>And then</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">reboot</code></pre></div>
+<h2>Step 15: Boot into Arch Linux</h2>
+<p>If you successfully boot into Arch Linux ,** congratulations!**</p>
+<p>Login -In as <strong>root</strong> user with:</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">username:root
+password:&lt;your password for root user set in Step 11></code></pre></div>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*VbhUfdg5qm__HGxmv37dWQ.jpeg" alt="Congratulations! You have done it! In spite of all odds!"><em>Congratulations! You have done it! In spite of all odds!</em></p>
+<h2>Step 16: Activate Internet</h2>
+<p>To activate internet,</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">systemctl start NetworkManager
+
+nmtui</code></pre></div>
+<p>Connect to your wifi network using the GUI.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">systemctl enable NetworkManager</code></pre></div>
+<p><strong>Step 17:Grant SuperUser Permission to User</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">EDITOR=nano visudo</code></pre></div>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*n41FEppNHkAZsJJ8g6LPQA.png" alt="clear the # before wheel ALL=(ALL) ALL"><em>clear the # before wheel ALL=(ALL) ALL</em></p>
+<p>clear the <strong>#</strong> before <strong>wheel ALL=(ALL) ALL</strong></p>
+<p>Save by pressing CTRl+o, press enter and exit by pressing CTRL+x</p>
+<h2>Step 18:Install Graphics and Display Drivers</h2>
+<p><strong>To install Intel Card Drivers:</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">pacman -S xf86-video-intel</code></pre></div>
+<p>Now this is a <strong>mandatory</strong> install for everyone with an <strong>Intel CPU</strong>,</p>
+<p>For People having <strong>AMD Graphics Cards,</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">pacman -S xf86-video-amdgpu</code></pre></div>
+<p>For people having <strong>Nvidia Graphics Card,</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">pacman -S nvidia nvidia-utils</code></pre></div>
+<p><strong>To install Display Server</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">pacman -S xorg</code></pre></div>
+<p>Accept the defaults by hitting enter.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">pacman -S xorg-server</code></pre></div>
+<h2><strong>Step 19:Installing KDE Plasma Desktop</strong></h2>
+<p><strong>KDE</strong> is one of the more refined and customizable Desktops for Linux.</p>
+<p><strong>To Install Display Manager</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">pacman -S sddm</code></pre></div>
+<p><strong>Enable sddm</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">systemctl enable sddm</code></pre></div>
+<p>To install <strong>Plasma</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">pacman -S plasma kde-applications</code></pre></div>
+<p>OR</p>
+<p>For a <strong>Minimal</strong> install, without any bloatware,</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">pacman -S plasma</code></pre></div>
+<p>accept all defaults by pressing enter and start the install.</p>
+<p><strong>CONGRATULATIONS!</strong></p>
+<p>You have successfully Installed <strong>Arch Linux</strong> with <strong>KDE Plasma Desktop!.</strong></p>
+<p>Now to complete the installation,</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">reboot</code></pre></div>
+<p>Boot into <strong>Arch Linux</strong> with <strong>KDE Plasma Desktop, Login.</strong></p>
+<p><img src="https://cdn-images-1.medium.com/max/3840/1*_egnmx8uMUemxZII6MwdBg.png" alt="Your KDE Plasma desktop should look something like this"><em>Your KDE Plasma desktop should look something like this</em></p>
+<p>Open terminal and update the repositories.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">sudo pacman -Syyu</code></pre></div>
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*Qil2T7MoFxkRlfgaHkr8LA.jpeg" alt="i use arch btw"></p>
+<p><strong>That's it! You are done!</strong></p>
+<p>Now enjoy the <strong>plasma</strong> desktop environment. Try out different themes from the theme store. I really love the <strong>McMojave</strong> theme.Cheers!</p>
+<h2>Step 19(Alter): Installing GNOME</h2>
+<p>If u dont want to install <strong>KDE PLasma</strong>, then you can install <strong>GNOME.</strong></p>
+<p>Skip the step for installing KDE and follow the remaining tutorial</p>
+<p><strong>Install the Display manager</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">pacman -S gdm</code></pre></div>
+<p><strong>Enable gdm</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">systemctl enable gdm</code></pre></div>
+<p><strong>Install GNOME</strong></p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">pacman -S gnome gnome-extra</code></pre></div>
+<p>OR</p>
+<p>For minimal Install,</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">pacman -S gnome</code></pre></div>
+<p>Now reboot,</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">reboot</code></pre></div>
+<p><strong>CONGRATULATIONS!</strong></p>
+<p>You have successfully Installed <strong>Arch Linux</strong> with <strong>GNOME Desktop!.</strong></p>
+<p>Boot into <strong>Arch Linux</strong> with <strong>GNOME, Login.</strong></p>
+<p>Open terminal and update the repositories.</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">sudo pacman -Syyu</code></pre></div>
+<p><strong>That's it! You are done!</strong></p>
+<p>Now enjoy the <strong>GNOME</strong> desktop environment.!</p>
+<p><strong><em>If you have any doubts regarding anything at any point during the installation, or run into any problems during installation,you can refer to the fully fledged <a href="https://wiki.archlinux.org/" target="_blank" rel="nofollow noopener noreferrer">Arch Wiki</a>.</em></strong></p>
+<h3>Thank you guys!</h3></div></main><footer class="footer__StyledFooter-sc-4jwnt4-0 earxGk"><div class="footer__StyledSocialLinks-sc-4jwnt4-1 iKeBGp"><ul><li><a href="https://github.com/adithyaanilkumar" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></li><li><a href="https://www.instagram.com/adixthya" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><title>Instagram</title><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a></li><li><a href="https://twitter.com/adixthya" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><title>Twitter</title><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a></li><li><a href="https://www.linkedin.com/in/adithyaanilkumar" aria-label="Linkedin"><svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><title>LinkedIn</title><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></li></ul></div><div class="footer__StyledCredit-sc-4jwnt4-2 fLSMpu"><a href="https://github.com/bchiang7/v4"><div>Built by Adithya Anilkumar</div><div>Inspired From @bchiang7</div></a></div></footer></div></div></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-45666519-2', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/blog/arch";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-f4e05b864c9bf93fe2ca.js"],"app":["/app-6633e244a2035aa75c7b.js"],"component---cache-caches-gatsby-plugin-offline-app-shell-js":["/component---cache-caches-gatsby-plugin-offline-app-shell-js-e84596c37790733d100e.js"],"component---src-pages-404-js":["/component---src-pages-404-js-b2c1fc6a7325760e2c44.js"],"component---src-pages-archive-js":["/component---src-pages-archive-js-9080af7d2d9012a71980.js"],"component---src-pages-blog-index-js":["/component---src-pages-blog-index-js-d9e4472ca9ca38a21b37.js"],"component---src-pages-blog-tags-js":["/component---src-pages-blog-tags-js-858bff70bc4f3b3782c0.js"],"component---src-pages-index-js":["/component---src-pages-index-js-7af8436b37e2fa8ac253.js"],"component---src-pages-pensieve-index-js":["/component---src-pages-pensieve-index-js-7b166c6aaa4fb7d52823.js"],"component---src-pages-pensieve-tags-js":["/component---src-pages-pensieve-tags-js-d459d92929f190f89ed4.js"],"component---src-templates-post-js":["/component---src-templates-post-js-af94407ace8c7faaa0a2.js"],"component---src-templates-stories-js":["/component---src-templates-stories-js-27a2988ee7290f4e5e32.js"],"component---src-templates-stories-tag-js":["/component---src-templates-stories-tag-js-f43e4516e878c6ce4243.js"],"component---src-templates-tag-js":["/component---src-templates-tag-js-c75d0c4a4a05de80e490.js"]};/*]]>*/</script><script src="/polyfill-f4e05b864c9bf93fe2ca.js" nomodule=""></script><script src="/component---src-templates-post-js-af94407ace8c7faaa0a2.js" async=""></script><script src="/f08cfbb8d9b5435dc4e321cb57a03fac03337210-fa108e076fc515d8514e.js" async=""></script><script src="/app-6633e244a2035aa75c7b.js" async=""></script><script src="/framework-b2d6e508d75a672689cc.js" async=""></script><script src="/webpack-runtime-991b60b8a551cf0d3f61.js" async=""></script></body></html>
