@@ -96,7 +96,7 @@ const GlobalStyle = createGlobalStyle`
       }
 
       #content > * {
-        filter: blur(5px) brightness(0.7);
+        // filter: blur(0px) brightness(0.7);
         transition: var(--transition);
         pointer-events: none;
         user-select: none;
@@ -237,7 +237,7 @@ const GlobalStyle = createGlobalStyle`
 
   img[alt=""],
   img:not([alt]) {
-    filter: blur(5px);
+    filter: blur(0px);
   }
 
   svg {

@@ -11,11 +11,36 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const postTemplate = path.resolve(`src/templates/post.js`);
   const tagTemplate = path.resolve('src/templates/tag.js');
+  const storiesTemplate = path.resolve(`src/templates/stories.js`);
+  const storiestagTemplate = path.resolve('src/templates/storiesTag.js');
 
   const result = await graphql(`
     {
       postsRemark: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/content/posts/" } }
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              slug
+            }
+          }
+        }
+      }
+      tagsGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
+    }
+  `);
+
+  const storiesResult = await graphql(`
+    {
+      postsRemark: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/content/stories/" } }
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
       ) {
@@ -41,6 +66,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return;
   }
 
+  // Handle errors
+  if (storiesResult.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`);
+    return;
+  }
+
   // Create post detail pages
   const posts = result.data.postsRemark.edges;
 
@@ -52,13 +83,37 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
+  // Create post detail pages
+  const stories = storiesResult.data.postsRemark.edges;
+
+  stories.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.slug,
+      component: storiesTemplate,
+      context: {},
+    });
+  });
+
   // Extract tag data from query
   const tags = result.data.tagsGroup.group;
   // Make tag pages
   tags.forEach(tag => {
     createPage({
-      path: `/pensieve/tags/${_.kebabCase(tag.fieldValue)}/`,
+      path: `/blog/tags/${_.kebabCase(tag.fieldValue)}/`,
       component: tagTemplate,
+      context: {
+        tag: tag.fieldValue,
+      },
+    });
+  });
+
+  // Extract tag data from query
+  const storiesTags = storiesResult.data.tagsGroup.group;
+  // Make tag pages
+  storiesTags.forEach(tag => {
+    createPage({
+      path: `/pensieve/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: storiestagTemplate,
       context: {
         tag: tag.fieldValue,
       },

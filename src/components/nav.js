@@ -84,6 +84,8 @@ const StyledNav = styled.nav`
 
       .logo-container {
         position: relative;
+        width: 45px;
+        height: 45px;
         z-index: 1;
         svg {
           fill: none;
@@ -185,18 +187,18 @@ const Nav = ({ isHome }) => {
     <div className="logo" tabIndex="-1">
       {isHome ? (
         <a href="/" aria-label="home">
-          <div className="hex-container">
+          {/* <div className="hex-container">
             <IconHex />
-          </div>
+          </div> */}
           <div className="logo-container">
             <IconLogo />
           </div>
         </a>
       ) : (
         <Link to="/" aria-label="home">
-          <div className="hex-container">
+          {/* <div className="hex-container">
             <IconHex />
-          </div>
+          </div> */}
           <div className="logo-container">
             <IconLogo />
           </div>
@@ -206,9 +208,11 @@ const Nav = ({ isHome }) => {
   );
 
   const ResumeLink = (
-    <a className="resume-button" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-      Resume
+    <Link to="/blog" aria-label="home">
+    <a className="resume-button">
+      Blog
     </a>
+    </Link>
   );
 
   return (

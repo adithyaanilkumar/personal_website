@@ -3,6 +3,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
+import TypeIt from 'typeit-react';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -60,16 +61,49 @@ const Hero = () => {
   }, []);
 
   const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const two = <h2 className="big-heading">Adithya Anilkumar.</h2>;
+  const three = <h3 className="big-heading"><TypeIt
+  options={{
+    loop: true,
+  }}
+  getBeforeInit={instance => {
+    instance
+      .type('Hobbyist Developer')
+      .pause(750)
+      .delete(18)
+      .pause(500)
+      .type('Maker')
+      .pause(750)
+      .delete(5)
+      .pause(500)
+      .type('Chai Lover')
+      .pause(750)
+      .delete(10)
+      .pause(500)
+      .type('Cyborg')
+      .pause(500)
+      .delete(6)
+      .pause(500)
+      .type('Audiophile')
+      .pause(750)
+      .delete(10)
+      .pause(500)
+      .go();
+
+    // Remember to return it!
+    return instance;
+  }}></TypeIt></h3>;
   const four = (
     <>
       <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
+      and also a Jedi Master who loves to fly X-Wings :) <br></br><br></br>
+
+I am a DIY Homosapien who loves to create new products and get my hands dirty with Fullstack Web Development and IoT!
+<br/>
+Currently, I’m focused on building next gen EV's
         at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
+        <a href="https://atherenergy.com/" target="_blank" rel="noreferrer">
+          Ather Energy
         </a>
         .
       </p>
@@ -78,10 +112,10 @@ const Hero = () => {
   const five = (
     <a
       className="email-link"
-      href="https://www.newline.co/courses/build-a-spotify-connected-app"
+      href="https://form.typeform.com/to/dMWZ9O4C?typeform-source=devquest.typeform.com"
       target="_blank"
       rel="noreferrer">
-      Check out my course!
+      Get In Touch
     </a>
   );
 
